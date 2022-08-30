@@ -11,6 +11,17 @@ namespace Livraria
         private string diretor;
         private string duracao;
         private string censura;
+        public Dvd() 
+        {
+        
+        }
+        public Dvd(string diretor, string duracao, string censura, string descricao, string genero, int estoquedisponivel, double precocusto, double precovenda) : base(descricao, genero, estoquedisponivel, precocusto, precovenda)
+        {
+            this.diretor = diretor;
+            this.duracao = duracao;
+            this.censura = censura;
+        }
+
         public string Diretor
         {
             get { return diretor; }

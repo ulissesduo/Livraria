@@ -14,6 +14,18 @@ namespace Livraria
         private double precoCusto;
         private double precoVenda;
 
+        public Produto() 
+        {
+        
+        }
+        public Produto(string descricao, string genero, int estoquedisponivel, double precocusto, double precovenda) 
+        {
+            this.descricao = descricao;
+            this.genero = genero;
+            this.estoqueDisponível = estoquedisponivel;
+            this.precoCusto = precocusto;
+            this.precoVenda = precovenda;
+        }
         public string Descricao 
         {
              get { return descricao; }
@@ -39,15 +51,15 @@ namespace Livraria
             get { return precoVenda; }
             set { precoVenda = value; }
         }
-        public void comprar(int qtde) 
+        public virtual void comprar(int qtde) 
         {
             estoqueDisponível += qtde;
         }
-        public void vender(int qtde) 
+        public virtual void vender(int qtde) 
         {
             estoqueDisponível -= qtde;
         }
-        public void calcularPrecoVenda() 
+        public virtual void calcularPrecoVenda() 
         {
             Venda = getPrecoCusto * 1.1;
         }

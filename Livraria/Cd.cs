@@ -11,6 +11,17 @@ namespace Livraria
         private string artista;
         private string gravadora;
         private string paisOrigem;
+        public Cd() 
+        {
+        
+        }
+        public Cd(string artista, string gravadora, string paisOrigem, string descricao, string genero, int estoquedisponivel, double precocusto, double precovenda) : base(descricao, genero, estoquedisponivel, precocusto, precovenda)
+        {
+            this.artista = artista;
+            this.gravadora = gravadora;
+            this.paisOrigem = paisOrigem;
+
+        }
 
         public string Artista
         {

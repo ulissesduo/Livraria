@@ -12,6 +12,19 @@ namespace Livraria
         private string editora;
         private string edicao;
 
+        public Livro() 
+        {
+        
+        }
+
+        public Livro(string autor, string editora, string edicao, string descricao, string genero, int estoquedisponivel, double precocusto, double precovenda) 
+            : base(descricao,genero,estoquedisponivel,precocusto,precovenda) 
+        {
+            this.autor = autor;
+            this.editora = editora;
+            this.edicao = edicao;
+        }
+
         public string Autor
         {
             get { return autor; }
@@ -27,9 +40,26 @@ namespace Livraria
             get { return edicao; }
             set { edicao = value; }
         }
+        public override void comprar(int qtde)
+        {
+            base.comprar(qtde);
+        }
+        public override void vender(int qtde)
+        {
+            base.vender(qtde);
+        }
+        public override void calcularPrecoVenda()
+        {
+            base.calcularPrecoVenda();
+        }
         public string listarProduto() 
         {
-            return "Autor: " + Autor +
+            return "Descrição: " + Descricao +
+                "\nGênero: " + Genero +
+                "\nEstoque disponível: " + Estoque +
+                "\nPreço de custo: " + getPrecoCusto +
+                "\nPreço de venda: " + Venda +
+                "\nAutor: " + Autor +
                 "\nEditora: " + Editora +
                 "\nEdição: " + Edicao;
         }
